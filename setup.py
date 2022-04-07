@@ -4,8 +4,8 @@ with open("Readme.md", "r") as readme_file:
     readme = readme_file.read()
 
 setup(
-    name='Huobi_Pool_api',
-    version='0.1.3',
+    name='Huobi_Pool_Api',
+    version='0.0.1',
     license='MIT',
     author="Inkviz96",
     author_email='b-semen-b@mail.ru',
