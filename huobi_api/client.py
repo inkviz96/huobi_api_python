@@ -4,6 +4,7 @@ class Client:
     def __init__(self, access_api_key: str, secret_key: str) -> None:
         self.access_api_key = access_api_key
         self.secret_key = secret_key
+        self.base_uri = 'api.huobi.pro'
 
     from huobi_api.api.wallet import get_deposit_address
     from huobi_api.api.wallet import get_withdraw_quota
@@ -25,7 +26,14 @@ class Client:
     from huobi_api.api.account import point_transfer
 
     from huobi_api.api.reference import get_currencys_settings
-    from huobi_api.api.reference import supported_currencys
     from huobi_api.api.reference import chains_information
+    from huobi_api.api.reference import system_status
+    from huobi_api.api.reference import market_status
+    from huobi_api.api.reference import supported_trading_currencies
+    from huobi_api.api.reference import supported_trading_symbols
+    from huobi_api.api.reference import get_symbols_settings
+    from huobi_api.api.reference import get_market_symbols
+    from huobi_api.api.reference import get_currency_and_chains
+    from huobi_api.api.reference import get_current_timestamp
 
     from huobi_api.signing import sign_request
