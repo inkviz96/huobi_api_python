@@ -1,4 +1,4 @@
-### Huobi Pool Api
+### HuobiPoolApi
 
 
 Get user accounts list

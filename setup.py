@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-with open("huobi_api/Readme.md", "r") as readme_file:
+with open("Readme.md", "r") as readme_file:
     readme = readme_file.read()
 
 setup(
-    name='Huobi_Pool_Api',
+    name='HuobiPoolApi',
     version='0.0.1',
     license='MIT',
     author="Inkviz96",
