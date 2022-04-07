@@ -5,7 +5,7 @@ with open("Readme.md", "r") as readme_file:
 
 setup(
     name='Huobi Pool api',
-    version='0.0.1',
+    version='0.1.0',
     license='MIT',
     author="Inkviz96",
     author_email='b-semen-b@mail.ru',
