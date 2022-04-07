@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "huobi_api_ant"
+name = "Huobi-Pool-api"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Inkviz96"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

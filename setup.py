@@ -17,7 +17,7 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     install_requires=[
-          'requests',
+          'requests>=2.27.1',
       ],
     classifiers=[
         "Programming Language :: Python :: 3.8",
