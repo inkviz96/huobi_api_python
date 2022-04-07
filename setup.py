@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
-with open("Readme.md", "r") as readme_file:
+with open("README.md", "r") as readme_file:
     readme = readme_file.read()
 
 setup(
     name='HuobiPoolApi',
-    version='0.0.1',
+    version='0.0.2',
     license='MIT',
     author="Inkviz96",
     author_email='b-semen-b@mail.ru',
