@@ -36,4 +36,13 @@ class Client:
     from huobi_api.api.reference import get_currency_and_chains
     from huobi_api.api.reference import get_current_timestamp
 
+    from huobi_api.api.market import get_klines
+    from huobi_api.api.market import get_latest_aggregate_ticker
+    from huobi_api.api.market import get_latest_tickers_all_pairs
+    from huobi_api.api.market import get_market_depth
+    from huobi_api.api.market import get_last_trade
+    from huobi_api.api.market import get_most_recent_trades
+    from huobi_api.api.market import get_last_24h_market_summary
+    from huobi_api.api.market import get_real_time_nav
+
     from huobi_api.signing import sign_request

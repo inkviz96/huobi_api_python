@@ -7,8 +7,10 @@ import hmac
 import hashlib
 import base64
 
+from huobi_api.check_response import exception_catch
 
-def sign_request(self, method: str, endpoint: str, data: dict = None, body_data: dict = None):
+
+def sign_request(self, api: str, method: str, endpoint: str, data: dict = None, body_data: dict = None) -> json:
     base_data = {
         'AccessKeyId': self.access_api_key,
         'SignatureMethod': 'HmacSHA256',
@@ -22,4 +24,5 @@ def sign_request(self, method: str, endpoint: str, data: dict = None, body_data:
     signature = urlencode({'Signature': base64.b64encode(hash_code).decode()})
     url = f'https://{self.base_uri}{endpoint}?{params}&{signature}'
     response = requests.request(method, url, json=body_data)
+    exception_catch(api, response)
     return json.loads(response.text)
