@@ -10,7 +10,7 @@ import base64
 from huobi_api.check_response import exception_catch
 
 
-def sign_request(self, api: str, method: str, endpoint: str, data: dict = None, body_data: dict = None) -> json:
+def sign_request(self, api: str, method: str, endpoint: str, data: dict = None, body_data: dict = None) -> dict:
     base_data = {
         'AccessKeyId': self.access_api_key,
         'SignatureMethod': 'HmacSHA256',

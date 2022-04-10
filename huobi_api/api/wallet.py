@@ -1,21 +1,18 @@
-import json
-
-
-def get_deposit_address(self, currency: str) -> json:
+def get_deposit_address(self, currency: str) -> dict:
     data = {
         'currency': currency
     }
     return self.sign_request('wallet', 'GET', '/v2/account/deposit/address', data)
 
 
-def get_withdraw_quota(self, currency: str) -> json:
+def get_withdraw_quota(self, currency: str) -> dict:
     data = {
         'currency': currency
     }
     return self.sign_request('wallet', 'GET', '/v2/account/withdraw/quota', data)
 
 
-def get_withdraw_address(self, currency: str, **kwargs) -> json:
+def get_withdraw_address(self, currency: str, **kwargs) -> dict:
     """
     note: str = None
     limit: int = None
@@ -28,7 +25,7 @@ def get_withdraw_address(self, currency: str, **kwargs) -> json:
     return self.sign_request('wallet', 'GET', '/v2/account/withdraw/address', data)
 
 
-def withdraw(self, address: str, currency: str, amount: str, fee: float, **kwargs) -> json:
+def withdraw(self, address: str, currency: str, amount: str, fee: float, **kwargs) -> dict:
     """
     chain: str = None
     addr-tag: str = None
@@ -44,18 +41,18 @@ def withdraw(self, address: str, currency: str, amount: str, fee: float, **kwarg
     return self.sign_request('wallet', 'POST', '/v1/dw/withdraw/api/create', body_data=data)
 
 
-def withdrawal_order_by_order_id(self, clientOrderId: str) -> json:
+def withdrawal_order_by_order_id(self, clientOrderId: str) -> dict:
     data = {
         'clientOrderId': clientOrderId
     }
     return self.sign_request('wallet', 'GET', '/v1/query/withdraw/client-order-id', data)
 
 
-def cancel_withdraw(self, withdraw_id: str) -> json:
+def cancel_withdraw(self, withdraw_id: str) -> dict:
     return self.sign_request('wallet', 'POST', f'/v1/dw/withdraw-virtual/{withdraw_id}/cancel')
 
 
-def get_deposit_withdraw(self, _type: str, currency: str = None, **kwargs) -> json:
+def get_deposit_withdraw(self, _type: str, currency: str = None, **kwargs) -> dict:
     """
     from: str = None
     size: str = None

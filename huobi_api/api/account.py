@@ -1,15 +1,12 @@
-import json
-
-
-def get_accounts(self) -> json:
+def get_accounts(self) -> dict:
     return self.sign_request('account', 'GET', '/v1/account/accounts')
 
 
-def get_account_balance(self, account_id: int) -> json:
+def get_account_balance(self, account_id: int) -> dict:
     return self.sign_request('account', 'GET', f'/v1/account/accounts/{account_id}/balance')
 
 
-def get_total_valuation(self, **kwargs) -> json:
+def get_total_valuation(self, **kwargs) -> dict:
     """
     accountType: str = None
     valuationCurrency: str = None
@@ -18,7 +15,7 @@ def get_total_valuation(self, **kwargs) -> json:
     return self.sign_request('account', 'GET', '/v2/account/valuation', data)
 
 
-def get_asset_valuation(self, accountType: str, **kwargs) -> json:
+def get_asset_valuation(self, accountType: str, **kwargs) -> dict:
     mandatory_data = {
         'accountType': accountType
     }
@@ -35,7 +32,7 @@ def account_transfer(
         to_account: int,
         currency: str,
         amount: str
-) -> json:
+) -> dict:
     data = {
         'from-user': from_user,
         'from-account-type': from_account_type,
@@ -49,11 +46,11 @@ def account_transfer(
     return self.sign_request('account', 'POST', '/v1/account/transfer', body_data=data)
 
 
-def get_account_history(self) -> json:
+def get_account_history(self) -> dict:
     return self.sign_request('account', 'GET', '/v1/account/history')
 
 
-def get_account_ledger(self, accountId: str, **kwargs) -> json:
+def get_account_ledger(self, accountId: str, **kwargs) -> dict:
     """
     currency: str = None
     transactTypes: str = None
@@ -70,7 +67,7 @@ def get_account_ledger(self, accountId: str, **kwargs) -> json:
     return self.sign_request('account', 'GET', '/v2/account/ledger', data)
 
 
-def transfer_fund_between_spot_account(self, currency: str, amount: float, _type: str) -> json:
+def transfer_fund_between_spot_account(self, currency: str, amount: float, _type: str) -> dict:
     data = {
         'currency': currency,  # Currency name 	Refer to GET /v1/common/currencys
         'amount': amount,
@@ -79,7 +76,7 @@ def transfer_fund_between_spot_account(self, currency: str, amount: float, _type
     return self.sign_request('account', 'POST', '/v1/futures/transfer', body_data=data)
 
 
-def get_point_balance(self, **kwargs) -> json:
+def get_point_balance(self, **kwargs) -> dict:
     """
     subUid: str = None
     """
@@ -87,7 +84,7 @@ def get_point_balance(self, **kwargs) -> json:
     return self.sign_request('account', 'GET', '/v2/point/account', data)
 
 
-def point_transfer(self, fromUid: str, toUid: str, groupId: int, amount: str) -> json:
+def point_transfer(self, fromUid: str, toUid: str, groupId: int, amount: str) -> dict:
     data = {
         'fromUid': fromUid,
         'toUid': toUid,

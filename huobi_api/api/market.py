@@ -1,7 +1,4 @@
-import json
-
-
-def get_klines(self, symbol: str, period: str, **kwargs) -> json:
+def get_klines(self, symbol: str, period: str, **kwargs) -> dict:
     """
     size: int = None
     """
@@ -13,18 +10,18 @@ def get_klines(self, symbol: str, period: str, **kwargs) -> json:
     return self.sign_request('market', 'GET', '/market/history/kline', data)
 
 
-def get_latest_aggregate_ticker(self, symbol: str) -> json:
+def get_latest_aggregate_ticker(self, symbol: str) -> dict:
     data = {
         'symbol': symbol,
     }
     return self.sign_request('market', 'GET', '/market/detail/merged', data)
 
 
-def get_latest_tickers_all_pairs(self) -> json:
+def get_latest_tickers_all_pairs(self) -> dict:
     return self.sign_request('market', 'GET', '/market/tickers')
 
 
-def get_market_depth(self, symbol: str, _type: str, depth: int = None, **kwargs) -> json:
+def get_market_depth(self, symbol: str, _type: str, depth: int = None, **kwargs) -> dict:
     not_required_data = {
         'depth': depth
     } if depth else {}
@@ -36,14 +33,14 @@ def get_market_depth(self, symbol: str, _type: str, depth: int = None, **kwargs)
     return self.sign_request('market', 'GET', '/market/depth', data)
 
 
-def get_last_trade(self, symbol: str) -> json:
+def get_last_trade(self, symbol: str) -> dict:
     data = {
         'symbol': symbol,
     }
     return self.sign_request('market', 'GET', '/market/trade', data)
 
 
-def get_most_recent_trades(self, symbol: str, **kwargs) -> json:
+def get_most_recent_trades(self, symbol: str, **kwargs) -> dict:
     """
     size: int = None
     """
@@ -54,14 +51,14 @@ def get_most_recent_trades(self, symbol: str, **kwargs) -> json:
     return self.sign_request('market', 'GET', '/market/history/trade', data)
 
 
-def get_last_24h_market_summary(self, symbol: str) -> json:
+def get_last_24h_market_summary(self, symbol: str) -> dict:
     data = {
         'symbol': symbol,
     }
     return self.sign_request('market', 'GET', '/market/detail', data)
 
 
-def get_real_time_nav(self, symbol: str) -> json:
+def get_real_time_nav(self, symbol: str) -> dict:
     data = {
         'symbol': symbol,
     }
