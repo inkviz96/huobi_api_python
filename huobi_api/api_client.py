@@ -63,4 +63,20 @@ class Api(ABC):
     from huobi_api.api.subuser import aggregate_balance_subusers
     from huobi_api.api.subuser import account_balance_subuser
 
+    from huobi_api.api.trading import place_new_order
+    from huobi_api.api.trading import place_batch_orders
+    from huobi_api.api.trading import submit_cancel_order
+    from huobi_api.api.trading import submit_cancel_order_client_id
+    from huobi_api.api.trading import get_open_orders
+    from huobi_api.api.trading import submit_cancel_multiple_orders
+    from huobi_api.api.trading import submit_cancel_multiple_orders_ids
+    from huobi_api.api.trading import dead_man_switch
+    from huobi_api.api.trading import get_order_detail
+    from huobi_api.api.trading import get_order_detail_id
+    from huobi_api.api.trading import get_match_result_order
+    from huobi_api.api.trading import search_past_orders
+    from huobi_api.api.trading import search_history_orders_48hours
+    from huobi_api.api.trading import search_match_results
+    from huobi_api.api.trading import get_current_fee_rate_applied
+
     from huobi_api.signing import sign_request
