@@ -10,7 +10,7 @@ python:
 before_install:
   - python -m pip install --upgrade pip
 install:
-  - pip install requiremets.txt
+  - pip install requirements.txt
 script:
   - pytest huobi_api/tests/*.py
 after_success:
